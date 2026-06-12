@@ -1,257 +1,781 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Hamer Glycans</title></head><body><h1>Hamer Glycans</h1><p>The manuscript is complete. Editing and proofing in progress.</p></body></html>
+
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamer Glycans Systems | Research, Apps & Support</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for clean icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamer Glycans — Independent Research into Dietary Xenoantigens & Chronic Inflammation</title>
+<meta name="description" content="Martin Hamer's unified xenoantigen hypothesis connecting dietary Neu5Gc and wheat-derived immunogens to chronic inflammatory conditions including acne and rosacea.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C89520;
+    --gold-light: #F0B429;
+    --gold-pale: #FAE6A0;
+    --gold-dim: #7A5C10;
+    --black: #0E0E0E;
+    --dark: #181818;
+    --dark-mid: #232323;
+    --panel: #1C1C1C;
+    --border: rgba(200,149,32,0.18);
+    --border-strong: rgba(200,149,32,0.45);
+    --text: #E8E2D5;
+    --text-muted: #8A8070;
+    --text-dim: #5A5248;
+    --radius: 4px;
+    --radius-lg: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(14,14,14,0.96);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .nav-brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    color: var(--gold-light);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(200,149,32,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-logo {
+    width: min(380px, 72vw);
+    height: auto;
+    margin-bottom: 3rem;
+    filter: drop-shadow(0 4px 32px rgba(200,149,32,0.25));
+  }
+  .hero-kicker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1rem;
+  }
+  .hero-headline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    max-width: 760px;
+    margin: 0 auto 1.5rem;
+  }
+  .hero-headline em {
+    font-style: normal;
+    color: var(--gold-light);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: transparent;
+    color: var(--gold-light);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-strong);
+    transition: background 0.2s, border-color 0.2s;
+    cursor: pointer;
+  }
+  .btn-ghost:hover { background: rgba(200,149,32,0.07); border-color: var(--gold); }
+
+  /* ─── DIVIDER ─── */
+  .rule {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+  .section-label {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1rem;
+  }
+
+  /* ─── SECTIONS ─── */
+  .section {
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+    line-height: 1.15;
+  }
+  .section-title em { font-style: normal; color: var(--gold-light); }
+  .section-intro {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 3.5rem;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* ─── BOOKS ─── */
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .book-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.25s, transform 0.2s;
+  }
+  .book-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+  }
+  .book-card.featured { border-color: rgba(200,149,32,0.55); }
+  .book-spine {
+    height: 6px;
+    background: var(--gold);
+  }
+  .book-card.vol2 .book-spine { background: var(--text-dim); }
+  .book-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+  .book-vol {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .book-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+  .book-sub {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    font-style: italic;
+    font-weight: 300;
+  }
+  .book-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    flex: 1;
+    margin-bottom: 1.8rem;
+    font-weight: 300;
+  }
+  .book-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .book-price {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+  }
+  .badge-coming {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    background: rgba(90,82,72,0.4);
+    color: var(--text-dim);
+    border-radius: var(--radius);
+    border: 1px solid var(--text-dim);
+  }
+
+  /* ─── ABOUT / CREDENTIALS ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; gap: 2rem; } }
+  .about-text p {
+    font-size: 0.97rem;
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+    font-weight: 300;
+  }
+  .about-text p strong { color: var(--text); font-weight: 500; }
+  .credential-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .credential-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .cred-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    background: rgba(200,149,32,0.1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  .cred-icon svg { width: 16px; height: 16px; fill: var(--gold-dim); }
+  .cred-text { font-size: 0.85rem; color: var(--text-muted); font-weight: 300; line-height: 1.6; }
+  .cred-text strong { color: var(--text); font-weight: 500; display: block; margin-bottom: 1px; }
+
+  /* ─── APP ─── */
+  .app-row {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  @media (max-width: 760px) { .app-row { grid-template-columns: 1fr; } }
+  .app-copy p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+  .app-features {
+    list-style: none;
+    margin: 1.5rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .app-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+  .app-features li::before {
+    content: '▸';
+    color: var(--gold-dim);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .app-mockup {
+    background: var(--dark-mid);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    font-family: 'Barlow', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.9;
+  }
+  .app-mockup .scan-line { color: var(--gold-dim); }
+  .app-mockup .trigger-line { color: #c0392b; font-weight: 500; }
+  .app-mockup .ok-line { color: #27ae60; font-weight: 500; }
+
+  /* ─── RESEARCH ─── */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .paper-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: border-color 0.2s;
+  }
+  .paper-card:hover { border-color: var(--border-strong); }
+  .paper-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+  .paper-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.25;
+  }
+  .paper-desc {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    font-weight: 300;
+    flex: 1;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .footer-brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    font-weight: 300;
+  }
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .footer-links a {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+    letter-spacing: 0.05em;
+  }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  /* ─── FULL-WIDTH BAND ─── */
+  .band {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ─── PULL QUOTE ─── */
+  .pull-quote {
+    border-left: 3px solid var(--gold);
+    padding: 0.8rem 1.5rem;
+    margin: 2rem 0;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .pull-quote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-size: 0.78rem;
+    font-family: 'Barlow', sans-serif;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .section { padding: 4rem 1.25rem; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body>
 
-    <!-- Navigation Bar -->
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-xl font-bold tracking-tight text-blue-900">
-                        Hamer<span class="text-blue-600">Glycans</span>
-                    </span>
-                </div>
-                <div class="hidden md:flex space-x-8 font-medium text-sm text-slate-600">
-                    <a href="#about" class="hover:text-blue-600 transition">About</a>
-                    <a href="#ebooks" class="hover:text-blue-600 transition">eBooks</a>
-                    <a href="#app" class="hover:text-blue-600 transition">Acnerase App</a>
-                    <a href="#support" class="hover:text-blue-600 transition">Support Centre</a>
-                    <a href="#research" class="hover:text-blue-600 transition">Further Reading</a>
-                </div>
-                <div>
-                    <a href="#support" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
-                        Get Help
-                    </a>
-                </div>
-            </div>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">Hamer Glycans</a>
+  <ul class="nav-links">
+    <li><a href="#books">Books</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#app">Acnerase</a></li>
+    <li><a href="#research">Research</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img
+    src="hamer-glycans-logo.jpg"
+    alt="Hamer Glycans logo — gold industrial lettering with glycan branch structure"
+    class="hero-logo"
+  >
+  <p class="hero-kicker">Independent Research · Dietary Xenoantigens · Chronic Inflammation</p>
+  <h1 class="hero-headline">
+    What if your food is <em>teaching your immune system</em> to attack you?
+  </h1>
+  <p class="hero-sub">
+    Twenty-three years of clinical observation and self-experimentation, decoded into two books, a food-scanning app, and a growing body of white papers connecting dietary Neu5Gc to acne, rosacea, and systemic inflammatory disease.
+  </p>
+  <div class="hero-actions">
+    <a href="#books" class="btn-primary">Read the Books</a>
+    <a href="#research" class="btn-ghost">White Papers</a>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- BOOKS -->
+<div id="books" class="band">
+  <div class="section">
+    <span class="section-label">Books</span>
+    <h2 class="section-title">Two books. One unified framework.</h2>
+    <p class="section-intro">
+      Each volume is standalone — start with whichever condition concerns you most. Together they form the complete Sialic-Glycan Inflammatory Cascade (SGIC) argument.
+    </p>
+
+    <div class="books-grid">
+
+      <!-- BOOK 1 -->
+      <div class="book-card featured">
+        <div class="book-spine"></div>
+        <div class="book-body">
+          <p class="book-vol">Volume I · Available Now</p>
+          <h3 class="book-title">Rethinking Acne and Rosacea</h3>
+          <p class="book-sub">A xenoantigen hypothesis for chronic skin inflammation</p>
+          <p class="book-desc">
+            If you have tried every cream, antibiotic, and elimination diet and still flare — this book is for you. Drawing on a 23-year personal resolution record and decades of nursing experience, Martin Hamer presents the dietary xenoantigen case: how bovine Neu5Gc and wheat-derived ATIs prime a self-reinforcing immune cascade that dermatology has largely missed. Includes the lymphatic sequestration hypothesis, a guide to hidden Neu5Gc sources, and the case against gelatin capsule shells.
+          </p>
+          <div class="book-footer">
+            <span class="book-price">$34.99 USD</span>
+            <a href="https://martinhamer.gumroad.com" target="_blank" rel="noopener" class="btn-primary">Buy on Gumroad →</a>
+          </div>
         </div>
-    </nav>
+      </div>
 
-    <!-- Hero Section -->
-    <header id="about" class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center space-y-6">
-            <span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
-                Evidence-Based Metabolic Science
-            </span>
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
-                Bridging the Gap Between Dietary Triggers & Systemic Inflammation
-            </h1>
-            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                Decades of clinical observation and longitudinal research decoded into actionable resources, innovative mobile scanning technology, and dedicated community support.
-            </p>
-            <div class="pt-4 flex justify-center gap-4">
-                <a href="#ebooks" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium shadow-lg transition">
-                    Explore Resources
-                </a>
-                <a href="#research" class="bg-white/10 hover:bg-white/15 text-white border border-white/20 px-6 py-3 rounded-xl font-medium transition">
-                    Read the White Papers
-                </a>
-            </div>
+      <!-- BOOK 2 -->
+      <div class="book-card vol2">
+        <div class="book-spine"></div>
+        <div class="book-body">
+          <p class="book-vol">Volume II · Coming Soon</p>
+          <h3 class="book-title">What the Canary Knew</h3>
+          <p class="book-sub">The xenoantigen connection across fifteen chronic conditions</p>
+          <p class="book-desc">
+            The SGIC framework extended beyond skin: into Lyme post-treatment sequelae, fibromyalgia, osteoporosis, inflammatory arthritis, hypertension, obesity and type 2 diabetes, cancer immune surveillance, and more. Fourteen condition-specific chapters — each with testable predictions, a limitations section, and links to the supporting white papers at hamerglycans.com.
+          </p>
+          <div class="book-footer">
+            <span class="badge-coming">Manuscript complete — release pending</span>
+          </div>
         </div>
-    </header>
+      </div>
 
-    <!-- Main Content Container -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+    </div>
+  </div>
+</div>
+<hr class="rule">
 
-        <!-- Section: eBooks -->
-        <section id="ebooks" class="scroll-mt-20">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Educational eBooks</h2>
-                <p class="text-slate-600 mt-2">Deep dives into nutritional biochemistry and structural frameworks for managing systemic inflammatory triggers.</p>
-            </div>
+<!-- ABOUT -->
+<div id="about">
+  <div class="section">
+    <span class="section-label">About the Researcher</span>
+    <h2 class="section-title">A retired nurse who <em>solved his own case</em></h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Martin Hamer is a retired registered nurse with <strong>45 years of clinical experience</strong> at institutions including the Texas Heart Institute and Vancouver General Hospital. He is not a dermatologist, gastroenterologist, or immunologist — which may be exactly why he noticed something the specialists missed.
+        </p>
+        <p>
+          In 2003, while following a modified Atkins diet, Hamer noticed his chronic skin condition had resolved. Systematic provocation-elimination testing confirmed the pattern: <strong>bovine dairy products and red meat reliably reactivated symptoms within two to four hours</strong>, while elimination produced sustained, reproducible clearance.
+        </p>
+        <p>
+          That observation launched a 23-year research programme into sialic acid biology, dietary xenoantigens, and the mechanism he now calls the <strong>Sialic-Glycan Inflammatory Cascade (SGIC)</strong> — the Hamer Loop.
+        </p>
+        <blockquote class="pull-quote">
+          "The hypothesis is simple. The immune implications are not."
+          <cite>— Martin Hamer, Hamer Glycan Systems</cite>
+        </blockquote>
+        <p>
+          Research correspondence with <strong>Dr. Ajit Varki and Dr. Nissi Varki</strong> (UCSD) — the world's leading Neu5Gc researchers — spans over two decades. Dr. Nissi Varki has agreed to review both book manuscripts.
+        </p>
+      </div>
 
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Book 1 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200/60 overflow-hidden flex flex-col justify-between p-6 hover:shadow-md transition">
-                    <div class="space-y-4">
-                        <div class="w-full aspect-[3/4] bg-gradient-to-tr from-blue-700 to-indigo-900 rounded-xl flex flex-col justify-between p-6 text-white shadow-inner">
-                            <span class="text-xs uppercase tracking-widest opacity-75 font-semibold">Volume I</span>
-                            <h3 class="text-2xl font-bold leading-snug">The Acne Lie</h3>
-                            <p class="text-xs opacity-80 border-t border-white/20 pt-3">A Clinical Case Against Conventional Dietary Wisdom</p>
-                        </div>
-                        <h4 class="text-xl font-bold text-slate-900">The Acne Lie</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Exposing the gaps in traditional dermatology. This volume challenges common myths and introduces the foundational metabolic connections behind chronic skin inflammation.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                        <span class="text-2xl font-bold text-slate-900">$14.99 <span class="text-xs text-slate-400 font-normal">USD</span></span>
-                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2">
-                            <i class="fa-solid fa-cart-shopping text-xs"></i> Buy Now
-                        </button>
-                    </div>
-                </div>
+      <ul class="credential-list">
+        <li class="credential-item">
+          <div class="cred-icon">
+            <svg viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4zm1 5H9V7h2v2zm0 4H9v-3h2v3z"/></svg>
+          </div>
+          <div class="cred-text">
+            <strong>45 years clinical nursing</strong>
+            Texas Heart Institute · Vancouver General Hospital
+          </div>
+        </li>
+        <li class="credential-item">
+          <div class="cred-icon">
+            <svg viewBox="0 0 20 20"><path d="M3 4h14v2H3V4zm0 5h14v2H3V9zm0 5h9v2H3v-2z"/></svg>
+          </div>
+          <div class="cred-text">
+            <strong>23 years Neu5Gc research</strong>
+            Longitudinal self-experimentation · white paper corpus
+          </div>
+        </li>
+        <li class="credential-item">
+          <div class="cred-icon">
+            <svg viewBox="0 0 20 20"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.3 5.2 16.8l.9-5.3L2.2 7.7l5.4-.8L10 2z"/></svg>
+          </div>
+          <div class="cred-text">
+            <strong>Correspondence with UCSD Varki Lab</strong>
+            Dr. Ajit Varki · Dr. Nissi Varki — world leaders in Neu5Gc biology
+          </div>
+        </li>
+        <li class="credential-item">
+          <div class="cred-icon">
+            <svg viewBox="0 0 20 20"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zm-2 4a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2V9a2 2 0 00-2-2H5zm5 3a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1z"/></svg>
+          </div>
+          <div class="cred-text">
+            <strong>Hamer Glycan Systems</strong>
+            Independent research · Veteran, Alberta, Canada
+          </div>
+        </li>
+        <li class="credential-item">
+          <div class="cred-icon">
+            <svg viewBox="0 0 20 20"><path d="M13 6H7a1 1 0 00-1 1v8a1 1 0 001 1h6a1 1 0 001-1V7a1 1 0 00-1-1zm-5 7V9h4v4H8zm6-9H6a3 3 0 00-3 3v10a3 3 0 003 3h8a3 3 0 003-3V7a3 3 0 00-3-3z"/></svg>
+          </div>
+          <div class="cred-text">
+            <strong>Acnerase App Developer</strong>
+            Flutter · Android · 150+ Neu5Gc synonym ingredient database
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr class="rule">
 
-                <!-- Book 2 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200/60 overflow-hidden flex flex-col justify-between p-6 hover:shadow-md transition">
-                    <div class="space-y-4">
-                        <div class="w-full aspect-[3/4] bg-gradient-to-tr from-emerald-700 to-teal-900 rounded-xl flex flex-col justify-between p-6 text-white shadow-inner">
-                            <span class="text-xs uppercase tracking-widest opacity-75 font-semibold">Volume II</span>
-                            <h3 class="text-2xl font-bold leading-snug">Dietary Glycans & Inflammation</h3>
-                            <p class="text-xs opacity-80 border-t border-white/20 pt-3">The Molecular Mechanisms of Chronic Triggers</p>
-                        </div>
-                        <h4 class="text-xl font-bold text-slate-900">Dietary Glycans & Inflammation</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            A highly technical look at the 23-year longitudinal perspective on how specific complex carbohydrates and molecular structures impact systemic biological pathways.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                        <span class="text-2xl font-bold text-slate-900">$19.99 <span class="text-xs text-slate-400 font-normal">USD</span></span>
-                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2">
-                            <i class="fa-solid fa-cart-shopping text-xs"></i> Buy Now
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- APP -->
+<div id="app" class="band">
+  <div class="section">
+    <span class="section-label">Acnerase App · Free for Android</span>
+    <div class="app-row">
+      <div class="app-copy">
+        <h2 class="section-title">Stop guessing at<br><em>the grocery store</em></h2>
+        <p>
+          Acnerase scans food ingredient labels using optical text recognition — no barcode lookup, no crowdsourced database latency. It cross-references every ingredient against a 150+ entry Neu5Gc synonym library built specifically for this hypothesis.
+        </p>
+        <p>
+          No account required. No data leaves your phone. Designed by someone who has lived with the problem for over two decades.
+        </p>
+        <ul class="app-features">
+          <li>Direct optical ingredient-label scanning</li>
+          <li>Identifies hidden Neu5Gc sources (e.g. casein, whey, lactose, gelatin, bovine collagen)</li>
+          <li>Flags wheat-derived ATIs and gliadin-containing additives</li>
+          <li>Completely free — no in-app purchases</li>
+          <li>All processing local and private</li>
+        </ul>
+        <a href="https://acnerase.ca" target="_blank" rel="noopener" class="btn-primary">Visit acnerase.ca</a>
+      </div>
 
-        <hr class="border-slate-200">
+      <div class="app-mockup">
+        <div class="scan-line">■ SCANNING INGREDIENT LABEL…</div>
+        <br>
+        Maltodextrin ···················· OK<br>
+        Whey Protein Isolate ········ <span class="trigger-line">NEU5GC ⚑</span><br>
+        Modified Corn Starch ········ OK<br>
+        Natural Flavors ··············· OK<br>
+        Gelatin (bovine) ·············· <span class="trigger-line">NEU5GC ⚑</span><br>
+        Sunflower Oil ·················· OK<br>
+        Lecithin ·························· OK<br>
+        <br>
+        <div class="scan-line">─────────────────────────────</div>
+        <span class="trigger-line">2 TRIGGERS DETECTED</span><br>
+        Bovine-derived xenoantigens identified.<br>
+        <span class="ok-line">Scan complete.</span>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="rule">
 
-        <!-- Section: Acnerase App -->
-        <section id="app" class="scroll-mt-20 bg-gradient-to-br from-slate-900 to-blue-950 rounded-3xl p-8 md:p-12 text-white shadow-xl">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-6">
-                    <span class="bg-blue-500/20 text-blue-300 border border-blue-500/30 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
-                        Now Available for Android
-                    </span>
-                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Acnerase Mobile Platform</h2>
-                    <p class="text-slate-300 leading-relaxed">
-                        Stop guessing at the grocery store. Acnerase uses advanced text-recognition technology to scan complex food ingredient lists instantly, filtering out hidden inflammatory compounds and molecular triggers tailored to your sensitivity profile.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-blue-400"></i> Direct ingredient label optical scanning (no outdated barcode lookup)</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-blue-400"></i> Instant identification of complex hidden dietary glycans</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-blue-400"></i> Privacy-focused, local processing built for real-world utility</li>
-                    </ul>
-                    <div class="pt-4">
-                        <button class="bg-white text-slate-900 hover:bg-slate-100 px-6 py-3 rounded-xl font-medium transition inline-flex items-center gap-3 shadow-md">
-                            <i class="fa-brands fa-google-play text-xl text-blue-600"></i> Download on Google Play
-                        </button>
-                    </div>
-                </div>
-                <!-- Dynamic UI Frame placeholder representing the smartphone app -->
-                <div class="flex justify-center">
-                    <div class="w-64 aspect-[9/19] bg-slate-950 rounded-[40px] border-[6px] border-slate-800 shadow-2xl p-4 flex flex-col justify-between text-slate-800 relative overflow-hidden">
-                        <div class="absolute top-0 inset-x-0 h-4 flex justify-center"><div class="w-24 h-4 bg-slate-800 rounded-b-xl"></div></div>
-                        <div class="mt-4 bg-white/95 rounded-2xl p-3 flex-1 flex flex-col justify-between shadow-inner">
-                            <div class="space-y-3">
-                                <div class="flex justify-between items-center border-b pb-2">
-                                    <span class="text-xs font-bold text-slate-900">Acnerase Scan</span>
-                                    <i class="fa-solid fa-bolt text-amber-500 text-xs"></i>
-                                </div>
-                                <div class="bg-slate-100 rounded-lg p-2 text-[10px] font-mono text-slate-500 border border-dashed border-slate-300">
-                                    INGREDIENTS: Maltodextrin, Whey Protein Isolate, Modified Corn Starch, Natural Flavors...
-                                </div>
-                                <div class="bg-red-50 border border-red-200 rounded-lg p-2 flex items-start gap-2">
-                                    <i class="fa-solid fa-triangle-exclamation text-red-600 text-xs mt-0.5"></i>
-                                    <div>
-                                        <p class="text-[10px] font-bold text-red-800">Trigger Detected</p>
-                                        <p class="text-[9px] text-red-700">High-glycemic modified polysaccharides identified.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w-full bg-blue-600 text-white rounded-lg text-center py-1.5 text-xs font-medium">
-                                Ready to Scan
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- RESEARCH -->
+<div id="research">
+  <div class="section">
+    <span class="section-label">Further Reading · White Papers</span>
+    <h2 class="section-title">The manuscript corpus</h2>
+    <p class="section-intro">
+      Formal hypothesis papers, condition-specific white papers, and the seven-document Hamer Loop Manuscript Series. All housed here as companion reading for both books.
+    </p>
 
-        <!-- Section: Support Centre -->
-        <section id="support" class="scroll-mt-20">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Acne & Rosacea Support Centre</h2>
-                <p class="text-slate-600 mt-2">A safe space for practical strategies, accurate clinical knowledge, and peer-to-peer insights on managing flare-ups.</p>
-            </div>
+    <div class="research-grid">
+      <div class="paper-card">
+        <p class="paper-tag">Hamer Loop Series · Documents 1–7</p>
+        <p class="paper-title">The SGIC Manuscript Series</p>
+        <p class="paper-desc">The foundational seven-document sequence establishing the Sialic-Glycan Inflammatory Cascade (SGIC) mechanism, from molecular ingestion through lymphatic sequestration and systemic re-expression.</p>
+      </div>
+      <div class="paper-card">
+        <p class="paper-tag">Skin Conditions</p>
+        <p class="paper-title">Acne, Rosacea & the Cutaneous Immune Phenotype</p>
+        <p class="paper-desc">Linking Neu5Gc-loaded antigen-antibody complexes to sebaceous gland targeting, lymphatic sequestration, and the DUX4 cutaneous immune phenotype.</p>
+      </div>
+      <div class="paper-card">
+        <p class="paper-tag">Infectious Disease Sequelae</p>
+        <p class="paper-title">Lyme / PTLDS Xenoantigen Amplifier</p>
+        <p class="paper-desc">How dietary Neu5Gc amplifies post-treatment Lyme disease sequelae through shared sialic acid molecular mimicry — the cancer-Lyme immune evasion parallel.</p>
+      </div>
+      <div class="paper-card">
+        <p class="paper-tag">Metabolic Conditions</p>
+        <p class="paper-title">Hypertension, Obesity & Type 2 Diabetes</p>
+        <p class="paper-desc">A convergent mechanism paper connecting xenosialitis to endothelial inflammation, adipokine dysregulation, and insulin resistance via the SGIC framework.</p>
+      </div>
+      <div class="paper-card">
+        <p class="paper-tag">Oncology</p>
+        <p class="paper-title">Cancer Immune Surveillance & Neu5Gc</p>
+        <p class="paper-desc">Dietary Neu5Gc elimination as a tumour glycocalyx disruption strategy — implications for Neu5Gc-incorporating cancers and checkpoint interference.</p>
+      </div>
+      <div class="paper-card">
+        <p class="paper-tag">Musculoskeletal</p>
+        <p class="paper-title">Inflammatory Arthritis & Osteoporosis</p>
+        <p class="paper-desc">Triple-pathway osteoporosis convergence (SGIC + ATI-driven gut permeability + calcium-phosphate dysregulation) with a case observation on fibromyalgia and FSHD.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-xl border border-slate-200/60 shadow-sm space-y-3">
-                    <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900">Knowledge Base</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Access verified articles breakdown the physiological mechanisms of systemic epidermal responses without the marketing hype.</p>
-                    <a href="#" class="text-sm font-semibold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1">Browse Guides <i class="fa-solid fa-arrow-right text-xs"></i></a>
-                </div>
-                <div class="bg-white p-6 rounded-xl border border-slate-200/60 shadow-sm space-y-3">
-                    <div class="w-10 h-10 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-600"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900">Dietary Protocols</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Practical, step-by-step guidance on identifying personal molecular triggers and structure-elimination diets that target internal pathways.</p>
-                    <a href="#" class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1">View Protocols <i class="fa-solid fa-arrow-right text-xs"></i></a>
-                </div>
-                <div class="bg-white p-6 rounded-xl border border-slate-200/60 shadow-sm space-y-3">
-                    <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center text-indigo-600"><i class="fa-solid fa-comments"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900">Community Forum</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Connect with others navigating chronic skin challenges. Share tracking insights, application feedback, and successful strategies.</p>
-                    <a href="#" class="text-sm font-semibold text-indigo-600 hover:text-indigo-700 inline-flex items-center gap-1">Join Discussion <i class="fa-solid fa-arrow-right text-xs"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <hr class="border-slate-200">
-
-        <!-- Section: Further Reading / White Papers -->
-        <section id="research" class="scroll-mt-20">
-            <div class="max-w-3xl mx-auto space-y-8">
-                <div>
-                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Further Reading</h2>
-                    <p class="text-slate-600 mt-1">Formal scientific essays, white papers, and academic submissions compiled over decades of independent laboratory and clinical tracking.</p>
-                </div>
-
-                <div class="space-y-4">
-                    <!-- Paper 1 -->
-                    <div class="bg-white p-5 rounded-xl border border-slate-200/60 shadow-sm flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:border-slate-300 transition">
-                        <div class="space-y-1">
-                            <span class="text-xs font-mono font-semibold tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded uppercase">White Paper</span>
-                            <h3 class="text-lg font-bold text-slate-900">Exogenous Glycans and Epidermal Hyperkeratosis</h3>
-                            <p class="text-sm text-slate-500">A biochemical analysis mapping the causal links between specific dietary carbohydrates and systemic skin barrier dysfunction.</p>
-                        </div>
-                        <button class="text-slate-600 hover:text-blue-600 hover:bg-slate-50 border border-slate-200 px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2 whitespace-nowrap self-start sm:self-center">
-                            <i class="fa-solid fa-file-pdf"></i> Read PDF
-                        </button>
-                    </div>
-
-                    <!-- Paper 2 -->
-                    <div class="bg-white p-5 rounded-xl border border-slate-200/60 shadow-sm flex flex-col sm:flex-row justify-between sm:items-center gap-4 hover:border-slate-300 transition">
-                        <div class="space-y-1">
-                            <span class="text-xs font-mono font-semibold tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded uppercase">Research Briefing</span>
-                            <h3 class="text-lg font-bold text-slate-900">Longitudinal Causal Analysis of Chronic Acne (23-Year Study)</h3>
-                            <p class="text-sm text-slate-500">A methodology and result paper chronicling the tracking of structural patterns in human nutrition and localized tissue reactions.</p>
-                        </div>
-                        <button class="text-slate-600 hover:text-blue-600 hover:bg-slate-50 border border-slate-200 px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2 whitespace-nowrap self-start sm:self-center">
-                            <i class="fa-solid fa-file-pdf"></i> Read PDF
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 text-sm py-12 mt-24 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="space-y-2 text-center md:text-left">
-                <span class="text-lg font-bold text-white tracking-tight">Hamer Glycans Systems</span>
-                <p class="text-xs text-slate-500">&copy; 2026 All Rights Reserved.</p>
-            </div>
-            <div class="flex gap-6 text-slate-400 text-xs">
-                <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                <a href="#" class="hover:text-white transition">Terms of Service</a>
-                <a href="#support" class="hover:text-white transition">Contact Support</a>
-            </div>
-        </div>
-    </footer>
+<!-- FOOTER -->
+<hr class="rule">
+<footer>
+  <div>
+    <p class="footer-brand">Hamer Glycans Systems</p>
+    <p class="footer-copy">© 2026 Martin Hamer. Independent research. Veteran, Alberta, Canada.</p>
+  </div>
+  <div class="footer-links">
+    <a href="https://martinhamer.gumroad.com" target="_blank" rel="noopener">Gumroad Store</a>
+    <a href="https://acnerase.ca" target="_blank" rel="noopener">Acnerase</a>
+    <a href="mailto:ifelloutofbed@gmail.com">Contact</a>
+  </div>
+</footer>
 
 </body>
 </html>
