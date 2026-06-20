@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Hamer Glycan Systems</title>
+<style>
+  :root {
+    --bg: #0b0b0c;
+    --bg-panel: #141415;
+    --gold: #d4a72c;
+    --gold-bright: #f0c84a;
+    --steel: #4a4a4d;
+    --steel-light: #8a8a8d;
+    --text: #e8e6df;
+    --text-dim: #a8a6a0;
+    --rule: #2a2a2c;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(212,167,44,0.04), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(212,167,44,0.03), transparent 40%);
+    color: var(--text);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 120px;
+  }
+
+  .eyebrow {
+    font-family: 'Arial Narrow', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    font-size: 12px;
+    color: var(--gold);
+    border-left: 3px solid var(--gold);
+    padding-left: 12px;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-family: 'Arial Narrow', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: clamp(32px, 6vw, 52px);
+    color: var(--gold-bright);
+    margin: 0 0 8px;
+    line-height: 1.05;
+  }
+
+  .sub {
+    color: var(--text-dim);
+    font-size: 17px;
+    max-width: 540px;
+    margin: 0 0 56px;
+  }
+
+  .intro-note {
+    background: var(--bg-panel);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--gold);
+    padding: 20px 24px;
+    margin-bottom: 56px;
+    font-size: 15px;
+    color: var(--text-dim);
+  }
+
+  .intro-note strong { color: var(--text); }
+
+  .section-label {
+    font-family: 'Arial Narrow', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 13px;
+    color: var(--steel-light);
+    margin: 56px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  details {
+    background: var(--bg-panel);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 18px 22px;
+    font-family: 'Arial Narrow', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: '+';
+    font-family: Georgia, serif;
+    font-size: 22px;
+    color: var(--gold);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary::after {
+    transform: rotate(45deg);
+  }
+
+  details[open] summary {
+    border-bottom: 1px solid var(--rule);
+    color: var(--gold-bright);
+  }
+
+  .answer {
+    padding: 20px 22px 24px;
+    font-size: 15.5px;
+    color: var(--text-dim);
+  }
+
+  .answer p { margin: 0 0 14px; }
+  .answer p:last-child { margin-bottom: 0; }
+
+  .answer a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-decoration-color: rgba(212,167,44,0.4);
+  }
+
+  .answer a:hover { color: var(--gold-bright); }
+
+  .answer .caveat {
+    font-size: 13.5px;
+    color: var(--steel-light);
+    font-style: italic;
+    border-top: 1px solid var(--rule);
+    padding-top: 12px;
+    margin-top: 16px;
+  }
+
+  .footer-cta {
+    margin-top: 72px;
+    text-align: center;
+    padding: 36px 24px;
+    border: 1px solid var(--rule);
+    background: var(--bg-panel);
+  }
+
+  .footer-cta p {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin: 0 0 16px;
+  }
+
+  .footer-cta a.btn {
+    display: inline-block;
+    font-family: 'Arial Narrow', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0b0b0c;
+    background: var(--gold);
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 1px;
+  }
+
+  .footer-cta a.btn:hover { background: var(--gold-bright); }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 40px 18px 80px; }
+    summary { font-size: 15px; padding: 16px 18px; }
+    .answer { padding: 16px 18px 20px; font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Hamer Glycan Systems</div>
+  <h1>Frequently Asked Questions</h1>
+  <p class="sub">Straight answers to the questions I get most often in acne and rosacea communities — written so you can read them on your own time, at your own pace.</p>
+
+  <div class="intro-note">
+    <strong>Who's answering these:</strong> I'm Martin Hamer, a retired RN with 45 years of clinical experience. I've spent 23 years documenting my own chronic acne and rosacea, what triggers it, and what clears it. This page is that documentation, organized by the questions people actually ask.
+  </div>
+
+  <div class="section-label">The Basics</div>
+
+  <details open>
+    <summary>What triggers should I avoid?<span></span></summary>
+    <div class="answer">
+      <p>Based on my own 23-year self-observation, two dietary categories consistently drive my chronic acne and rosacea:</p>
+      <p><strong>Neu5Gc</strong> — a sugar molecule found in red meat and dairy. <strong>ATIs and gliadin</strong> — proteins found in wheat, separate from gluten sensitivity or celiac disease.</p>
+      <p>Eliminating both is what cleared my skin, every time, for over two decades. Reintroducing either one reliably brought the flare-ups back.</p>
+      <p class="caveat">This is my own documented pattern, not a clinical guarantee that it works the same way for everyone. See the white papers for the full mechanism I propose.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Is this actually proven, or is it just anecdotal?<span></span></summary>
+    <div class="answer">
+      <p>It's not a peer-reviewed clinical trial — I want to be upfront about that. What it is: a 23-year, self-documented pattern of elimination and reintroduction, repeated many times over, with consistent results each time.</p>
+      <p>I've also corresponded with researchers at UCSD, including Dr. Ajit Varki and Dr. Nissi Varki, whose published research on Neu5Gc biology forms part of the scientific foundation for the hypothesis.</p>
+      <p>The white papers lay out both the mechanism I propose and its current evidentiary limits honestly. I'd rather you know exactly what this is and isn't before you decide whether to test it yourself.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Where do I even start?<span></span></summary>
+    <div class="answer">
+      <p>The cheapest way to find out if this applies to you: eliminate red meat, dairy, and wheat for 4–6 weeks. Track your skin. Then reintroduce one category at a time, a few weeks apart, and watch what happens.</p>
+      <p>That's essentially what I stumbled into 23 years ago on a modified Atkins diet — I just didn't know why it was working until later.</p>
+    </div>
+  </details>
+
+  <div class="section-label">The App</div>
+
+  <details>
+    <summary>How does the Acnerase app work?<span></span></summary>
+    <div class="answer">
+      <p>Acnerase uses your phone's camera to scan ingredient labels on food, beverages, and medications, and flags hidden sources of Neu5Gc and ATIs/gliadin — the two triggers I track. It's built for exactly the situation most people run into: standing in a grocery aisle, unsure if a product is safe.</p>
+      <p>It's free to use.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Do I need both books to understand this, or is the app enough?<span></span></summary>
+    <div class="answer">
+      <p>The app and white papers are free and cover the practical "what to avoid" side. The books go deeper into the full 23-year story — how I found the pattern, the science behind it, and how it connects to conditions beyond acne and rosacea.</p>
+      <p>Start with the free material. The books are there if you want the complete picture.</p>
+    </div>
+  </details>
+
+  <div class="section-label">The Bigger Picture</div>
+
+  <details>
+    <summary>Does this only apply to acne and rosacea?<span></span></summary>
+    <div class="answer">
+      <p>My own evidence base is acne and rosacea — that's what I've lived and documented for 23 years. But the underlying hypothesis (which I call the Sialic-Glycan Inflammatory Cascade, or SGIC) proposes the same dietary triggers may play a role in a wider range of chronic inflammatory conditions.</p>
+      <p>I've written separate white papers exploring possible connections to conditions like fibromyalgia, FSHD, arthritis, and others. These are more exploratory than the acne/rosacea work, and I try to be clear about that distinction in the papers themselves.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Are you trying to sell me something?<span></span></summary>
+    <div class="answer">
+      <p>The white papers, the app, and this entire site are free, no account or email required. I do sell two books for anyone who wants the full long-form version of the story — but you can get the complete practical picture without spending a cent.</p>
+      <p>I'm a retired nurse, not a company. I built this because I lived it.</p>
+    </div>
+  </details>
+
+  <div class="footer-cta">
+    <p>Have a question that isn't here? I read every message.</p>
+    <a class="btn" href="mailto:info@hamerglycans.com">Ask Martin Directly</a>
+  </div>
+
+</div>
+</body>
+</html>
