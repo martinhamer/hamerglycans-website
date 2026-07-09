@@ -1,1 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Two-Week Trigger Trial — Hamer Glycan Systems</title>
+<meta name="description" content="Cohort 1: July 13-30, 2026. A structured two-week self-experiment testing dietary Neu5Gc and ATI/gliadin elimination for moderate to severe acne, rosacea, and excessive oiliness.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C89520;
+    --gold-light: #F0B429;
+    --gold-pale: #FAE6A0;
+    --gold-dim: #7A5C10;
+    --black: #0E0E0E;
+    --dark: #181818;
+    --dark-mid: #232323;
+    --panel: #1C1C1C;
+    --border: rgba(200,149,32,0.18);
+    --border-strong: rgba(200,149,32,0.45);
+    --text: #E8E2D5;
+    --text-muted: #8A8070;
+    --text-dim: #5A5248;
+    --radius: 4px;
+    --radius-lg: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(14,14,14,0.96);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .nav-brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    color: var(--gold-light);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .rule { border: none; border-top: 1px solid var(--border); margin: 0; }
+  .section-label {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1rem;
+  }
+
+  .section { padding: 5rem 2rem; max-width: 800px; margin: 0 auto; }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+    line-height: 1.15;
+  }
+  .section-title em { font-style: normal; color: var(--gold-light); }
+  .section-intro {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero { padding: 4.5rem 2rem 2.5rem; max-width: 800px; margin: 0 auto; }
+  .hero-kicker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1rem;
+  }
+  .hero-headline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    margin-bottom: 1.2rem;
+  }
+  .hero-sub { font-size: 1.05rem; font-weight: 300; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.8rem; }
+
+  .cohort-banner {
+    background: var(--panel);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-lg);
+    padding: 1.3rem 1.6rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .cohort-banner .headline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--gold-light);
+    letter-spacing: 0.02em;
+  }
+  .cohort-banner .dim { color: var(--text-muted); font-size: 0.9rem; font-weight: 300; margin-top: 0.3rem; }
+
+  .panel-box {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .panel-box.safety { border-color: rgba(200,80,60,0.4); }
+  .panel-box h2, .section h2.inline-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+  }
+  .panel-box p { color: var(--text-muted); font-weight: 300; font-size: 0.95rem; line-height: 1.8; }
+  .panel-box p strong { color: var(--text); font-weight: 500; }
+
+  ol.steps { list-style: none; counter-reset: step; }
+  ol.steps li {
+    counter-increment: step;
+    padding-left: 2.4rem;
+    position: relative;
+    margin-bottom: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    font-size: 0.97rem;
+    line-height: 1.7;
+  }
+  ol.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.7rem;
+    height: 1.7rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--gold-light);
+  }
+  ol.steps li strong { color: var(--text); font-weight: 500; }
+
+  .btn-primary, .btn-ghost {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+  .btn-primary { background: var(--gold); color: var(--black); border: none; transition: background 0.2s, transform 0.15s; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--gold-light); border: 1px solid var(--border-strong); transition: background 0.2s, border-color 0.2s; }
+  .btn-ghost:hover { background: rgba(200,149,32,0.07); border-color: var(--gold); }
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .footer-brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+  .footer-copy { font-size: 0.78rem; color: var(--text-dim); font-weight: 300; }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.78rem; color: var(--text-dim); text-decoration: none; transition: color 0.2s; letter-spacing: 0.05em; }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .section, .hero { padding-left: 1.25rem; padding-right: 1.25rem; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Hamer Glycans</a>
+  <ul class="nav-links">
+    <li><a href="index.html#books">Books</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#app">Acnerase</a></li>
+    <li><a href="index.html#research">Research</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="trial.html">Trial</a></li>
+    <li><a href="https://registry.hamerglycans.com" target="_blank">Registry</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <p class="hero-kicker">Community Self-Experiment</p>
+  <h1 class="hero-headline">The Two-Week <em>Trigger Trial</em></h1>
+  <p class="hero-sub">Run a compressed version of the experiment that started all of this &mdash; on yourself, in two weeks.</p>
+
+  <div class="cohort-banner">
+    <div class="headline">Cohort 1: Monday, July 13 &ndash; Thursday, July 30, 2026</div>
+    <div class="dim">Limited to the first 150 registrants, then a waitlist.</div>
+  </div>
+
+  <p class="section-intro">
+    Twenty-three years ago, one accidental dietary change was the first data point behind everything on this site. This trial lets you test the same pattern in your own life: a short, structured period of avoidance, one clearly defined reintroduction, and an honest look at what changes. You don't need to believe the hypothesis to take part &mdash; only to be willing to observe your own body and report it accurately.
+  </p>
+  <p class="section-intro">
+    This isn't a replacement for anything you're already doing. It runs alongside your current treatment, and every result &mdash; including &ldquo;nothing changed&rdquo; &mdash; is useful data.
+  </p>
+</div>
+<hr class="rule">
+
+<div class="section">
+  <span class="section-label">Eligibility</span>
+  <div class="panel-box">
+    <h2>Who it's for</h2>
+    <p>This round is for people with <strong>moderate to severe, persistent</strong> acne, rosacea, or excessively oily skin &mdash; present most days, not just occasional breakouts. If your skin is currently clear or only mildly affected, there won't be enough of a signal to make the two weeks worthwhile, so we'd ask you to sit this cohort out.</p>
+  </div>
+</div>
+<hr class="rule">
+
+<div class="section">
+  <span class="section-label">The Protocol</span>
+  <h2 class="section-title">What's involved</h2>
+  <ol class="steps">
+    <li><strong>Day 0:</strong> A baseline photo and a simple 0&ndash;10 severity rating</li>
+    <li><strong>Days 1&ndash;14:</strong> Avoid the major Neu5Gc sources (red meat, dairy) and ATI/gliadin sources (wheat), using easy substitutions</li>
+    <li><strong>Day 14:</strong> A second assessment, same conditions as Day 0</li>
+    <li><strong>Day 15:</strong> One clearly defined reintroduction meal</li>
+    <li><strong>Days 15&ndash;17:</strong> Track what happens in the 6-hour and 24-hour windows that follow</li>
+  </ol>
+</div>
+<hr class="rule">
+
+<div class="section">
+  <span class="section-label">Safety</span>
+  <div class="panel-box safety">
+    <h2>Before you join</h2>
+    <p>This is not a clinical trial and not medical advice. Talk to your doctor or healthcare provider before starting, especially if you're pregnant or breastfeeding, have a history of disordered eating, take medication affected by diet, or are currently being treated for the condition you're hoping to see change in. Full eligibility guidance is in the protocol.</p>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn-ghost" href="Two_Week_Trigger_Trial_Protocol.pdf" target="_blank">Download the Full Protocol (PDF)</a>
+    <a class="btn-primary" href="https://registry.hamerglycans.com/enroll?source=two-week-trial">Register for the Trial &rarr;</a>
+  </div>
+</div>
+
+<hr class="rule">
+<footer>
+  <div>
+    <p class="footer-brand">Hamer Glycans Systems</p>
+    <p class="footer-copy">&copy; 2026 Martin Hamer. Independent research. Veteran, Alberta, Canada.</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html#books">Books</a>
+    <a href="https://acnerase.ca" target="_blank" rel="noopener">Acnerase</a>
+    <a href="mailto:ifelloutofbed@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
 
