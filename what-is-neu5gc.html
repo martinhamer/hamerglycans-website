@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Neu5Gc? A Plain-Language Guide — Hamer Glycans</title>
+<meta name="description" content="Humans lost the ability to make the sugar Neu5Gc millions of years ago, but still eat it in red meat and dairy. A plain-language guide to the established science of Neu5Gc, anti-Neu5Gc antibodies, and xenosialitis — and where the SGIC hypothesis begins.">
+<link rel="canonical" href="https://hamerglycans.com/what-is-neu5gc.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is Neu5Gc? A Plain-Language Guide to the Meat Sugar Your Body Treats as Foreign",
+  "description": "A plain-language guide to the established science of Neu5Gc, anti-Neu5Gc antibodies, and xenosialitis — and where the Sialic-Glycan Inflammatory Cascade hypothesis begins.",
+  "author": {
+    "@type": "Person",
+    "name": "Martin Hamer",
+    "jobTitle": "Registered Nurse (Ret.), Independent Researcher",
+    "affiliation": "Hamer Glycan Systems"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hamer Glycan Systems"
+  },
+  "datePublished": "2026-07-21",
+  "dateModified": "2026-07-21",
+  "url": "https://hamerglycans.com/what-is-neu5gc.html"
+}
+</script>
+<style>
+  :root{
+    --charcoal:      #14161a;
+    --charcoal-2:    #1c1f25;
+    --charcoal-3:    #262a32;
+    --gold:          #c9a24b;
+    --gold-bright:   #e8c874;
+    --coral:         #d1583f;
+    --coral-soft:    #e79c86;
+    --line:          rgba(201,162,75,0.16);
+    --text-dim:      rgba(232,200,116,0.80);
+    --text-faint:    rgba(232,200,116,0.52);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--charcoal);
+    color:var(--gold-bright);
+    font-family:'Source Serif 4', serif;
+    font-size:1.18rem;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+  }
+  h1,h2,h3,.display{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700; text-transform:uppercase; letter-spacing:0.01em; line-height:1.1; margin:0;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.18em;
+    text-transform:uppercase; color:var(--gold);
+  }
+  a{ color:var(--coral-soft); text-decoration:none; border-bottom:1px solid rgba(231,156,134,0.35); }
+  a:hover{ color:var(--gold-bright); border-bottom-color:var(--gold); }
+  img{ max-width:100%; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+  /* NAV */
+  .nav{ position:sticky; top:0; z-index:50; background:rgba(20,22,26,0.88); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  .nav-inner{ max-width:940px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; border:none; }
+  .brand img{ height:30px; width:auto; display:block; }
+  .brand span{ font-family:'Barlow Condensed', sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; font-size:1.05rem; color:var(--gold-bright); }
+  .nav-links{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+  .nav-links a{ font-family:'IBM Plex Mono', monospace; font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; color:var(--text-dim); border:none; }
+  .nav-links a:hover{ color:var(--gold-bright); }
+  .nav-links a.current{ color:var(--gold-bright); border-bottom:1px solid var(--gold); padding-bottom:2px; }
+  @media (max-width:720px){ .nav-links{ gap:14px; } .brand span{ display:none; } }
+
+  /* ARTICLE HEAD */
+  .ahead{ padding:64px 0 34px; border-bottom:1px solid var(--line); }
+  .breadcrumb{ font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-faint); margin-bottom:20px; }
+  .breadcrumb a{ color:var(--text-dim); border:none; }
+  .ahead h1{ font-size:clamp(2.5rem,6vw,3.7rem); color:var(--gold-bright); margin-top:12px; }
+  .ahead .sub{ font-size:1.28rem; color:var(--text-dim); margin-top:20px; font-style:italic; }
+  .meta{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; font-family:'IBM Plex Mono',monospace; font-size:0.74rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-faint); margin-top:26px; }
+  .meta .dot{ opacity:0.5; }
+
+  /* BODY */
+  article{ padding:8px 0 20px; }
+  article h2{ font-size:1.9rem; color:var(--gold-bright); margin:52px 0 6px; }
+  article h3{ font-size:1.3rem; color:var(--gold); margin:34px 0 4px; letter-spacing:0.02em; }
+  article p{ margin:20px 0; }
+  article strong{ color:var(--gold-bright); font-weight:600; }
+  .lead-p{ font-size:1.24rem; color:var(--gold-bright); }
+
+  /* SUMMARY BOX */
+  .summary{ background:var(--charcoal-2); border-left:3px solid var(--gold); border-radius:3px; padding:24px 28px; margin:36px 0; }
+  .summary .lbl{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); }
+  .summary p{ margin:12px 0 0; font-size:1.12rem; color:var(--gold-bright); }
+
+  /* CALLOUT — established vs hypothesis */
+  .callout{ border:1px solid var(--line); border-radius:4px; padding:26px 30px; margin:38px 0; background:var(--charcoal-2); }
+  .callout.hypo{ border-color:rgba(209,88,63,0.5); background:rgba(209,88,63,0.07); }
+  .callout .tag{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; display:inline-block; margin-bottom:10px; }
+  .callout .tag.est{ color:var(--gold); }
+  .callout .tag.hyp{ color:var(--coral-soft); }
+  .callout p{ margin:8px 0; font-size:1.08rem; }
+
+  /* PULLQUOTE */
+  .pull{ font-family:'Barlow Condensed',sans-serif; font-weight:600; text-transform:uppercase; font-size:1.7rem; line-height:1.2; color:var(--gold-bright); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:30px 0; margin:44px 0; letter-spacing:0.01em; }
+
+  /* DISCLAIMER */
+  .disclaimer{ background:var(--charcoal-3); border-radius:4px; padding:24px 28px; margin:44px 0 8px; }
+  .disclaimer .lbl{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--coral-soft); }
+  .disclaimer p{ margin:10px 0 0; font-size:1rem; color:var(--text-dim); }
+
+  /* REFERENCES */
+  .refs{ margin-top:20px; }
+  .refs h2{ margin-bottom:8px; }
+  .refs ol{ padding-left:22px; }
+  .refs li{ font-size:0.98rem; color:var(--text-dim); margin:16px 0; line-height:1.6; }
+  .refs .note{ font-family:'IBM Plex Mono',monospace; font-size:0.74rem; color:var(--text-faint); letter-spacing:0.04em; margin-bottom:20px; }
+
+  /* KEEP READING */
+  .next{ border-top:1px solid var(--line); margin-top:30px; padding:40px 0 10px; }
+  .next .lbl{ font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); }
+  .next-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
+  @media (max-width:640px){ .next-grid{ grid-template-columns:1fr; } }
+  .next-card{ display:block; background:var(--charcoal-2); border:1px solid var(--line); border-radius:4px; padding:22px 24px; text-decoration:none; border-bottom:1px solid var(--line); transition:border-color .2s ease; }
+  .next-card:hover{ border-color:var(--gold); }
+  .next-card .k{ font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); }
+  .next-card .t{ font-family:'Barlow Condensed',sans-serif; font-weight:600; text-transform:uppercase; font-size:1.28rem; color:var(--gold-bright); margin-top:8px; line-height:1.12; }
+  .next-card p{ color:var(--text-dim); font-size:0.98rem; margin:8px 0 0; }
+
+  /* FOOTER */
+  .foot{ border-top:1px solid var(--line); padding:44px 0 60px; margin-top:30px; }
+  .foot .fbrand{ font-family:'Barlow Condensed',sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:var(--gold-bright); font-size:1.2rem; }
+  .foot p{ color:var(--text-faint); font-size:0.92rem; margin:10px 0 0; }
+  .foot .flinks{ margin-top:20px; display:flex; gap:22px; flex-wrap:wrap; }
+  .foot .flinks a{ font-family:'IBM Plex Mono',monospace; font-size:0.74rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-dim); border:none; }
+  .foot .flinks a:hover{ color:var(--gold-bright); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="https://hamerglycans.com/hamer-glycans-logo.jpg" alt="Hamer Glycans logo">
+      <span>Hamer Glycans</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#books">Books</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#app">Acnerase</a>
+      <a href="index.html#research">Research</a>
+      <a href="blog.html" class="current">Library</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://registry.hamerglycans.com">Registry</a>
+    </div>
+  </div>
+</nav>
+
+<header class="ahead">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="blog.html">The SGIC Library</a> &nbsp;/&nbsp; Foundations</div>
+    <p class="eyebrow">Foundational Article</p>
+    <h1>What Is Neu5Gc?</h1>
+    <p class="sub">A plain-language guide to the meat sugar your body treats as foreign &mdash; and why a retired nurse spent 23 years chasing it.</p>
+    <div class="meta">
+      <span>By Martin Hamer, RN (Ret.)</span><span class="dot">&bull;</span>
+      <span>~10 min read</span><span class="dot">&bull;</span>
+      <span>Last reviewed July 2026</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<article>
+
+  <p class="lead-p">There is a sugar molecule that almost every mammal on Earth makes in its own body &mdash; cows, pigs, sheep, deer, dogs, cats. Humans are one of the rare exceptions. We lost the ability to make it somewhere around three million years ago, and we never got it back.</p>
+
+  <p>Its name is <strong>N-glycolylneuraminic acid</strong>, mercifully shortened to <strong>Neu5Gc</strong> (say &ldquo;new-five-gee-see&rdquo;). And here is the strange part: even though our bodies stopped making it, we never stopped eating it. It is still in the red meat and dairy on our plates. So it gets into us anyway &mdash; and our immune system, which has spent millions of years learning that this molecule is not one of ours, notices.</p>
+
+  <p>This article explains what Neu5Gc is, why the human relationship with it is so unusual, and what the established science says happens when we eat it. At the end, I&rsquo;ll be clear about where that established science stops and where my own hypothesis &mdash; the reason this whole website exists &mdash; begins.</p>
+
+  <div class="summary">
+    <span class="lbl">In one sentence</span>
+    <p>Neu5Gc is a sugar made by most mammals but not by humans; we absorb it from red meat and dairy, our immune system makes antibodies against it, and the resulting low-grade inflammation is a well-documented feature of human biology.</p>
+  </div>
+
+  <h2>The three-million-year-old typo</h2>
+
+  <p>Sialic acids are a family of sugars that sit on the outermost surface of nearly every cell in your body &mdash; the very tips of the molecular &ldquo;fuzz&rdquo; that coats your cells. They are among the first things any other cell, or any microbe, or your own immune system, actually touches. Most mammals carry two closely related versions: Neu5Ac and Neu5Gc. The body builds Neu5Gc from Neu5Ac using a single enzyme.</p>
+
+  <p>In the human lineage, the gene for that enzyme &mdash; called <strong>CMAH</strong> &mdash; broke. A piece of it was deleted, leaving the instructions unreadable. Every human being alive carries this same inactivating change; it is one of the clearest genetic lines separating us from our closest primate relatives. The result is simple to state: <strong>humans cannot make Neu5Gc.</strong> Our cell surfaces are built almost entirely from the other version, Neu5Ac.</p>
+
+  <p>For most of human history that would have been the end of the story. A gene switched off; a molecule we no longer carry. But we are omnivores, and much of what we eat is other mammals.</p>
+
+  <h2>Still on the menu</h2>
+
+  <p>Here is the twist that makes Neu5Gc worth an entire field of research. Although we can&rsquo;t manufacture it, our cells can&rsquo;t tell the difference between the two sugars when they&rsquo;re recycling raw materials from food. So when you eat Neu5Gc, your body quietly takes it up through a salvage pathway and installs it onto your own cell surfaces &mdash; as if it belonged there.</p>
+
+  <p>The richest dietary sources are, by a wide margin, <strong>red meats &mdash; beef, pork, lamb &mdash; and dairy.</strong> Poultry and most fish carry little to none, which is one reason those foods behave so differently in this framework. Because it enters through ordinary metabolism, this incorporation begins early: the antibodies discussed below tend to appear in the first months of life, coinciding with the introduction of red meat and cow&rsquo;s-milk formula.</p>
+
+  <p>So the human body ends up in a genuinely odd position. It is displaying, on its own cells, a molecule that its immune system has evolved to regard as <em>not human</em>.</p>
+
+  <div class="pull">A molecule we cannot make, worn on cells we cannot disown.</div>
+
+  <h2>The part your immune system objects to</h2>
+
+  <p>Because Neu5Gc is foreign to us, the immune system does what it does with foreign things: it makes antibodies. These are unusual antibodies, though. They are directed against a molecule that is now sitting on our <em>own</em> tissues &mdash; so researchers gave them a fittingly awkward name: <strong>&ldquo;xeno-autoantibodies.&rdquo;</strong> <em>Xeno</em> for foreign, <em>auto</em> for self. Foreign-yet-self.</p>
+
+  <p>Every human tested carries these anti-Neu5Gc antibodies, though the amounts and the exact targets vary a great deal from person to person. And this sets up a slow, quiet friction: dietary Neu5Gc keeps getting deposited into tissues, and circulating antibodies keep recognising it. The interaction between the two produces chronic, low-grade inflammation. The Varki laboratory at UC San Diego &mdash; whose foundational work underlies everything on this site, and with whom I&rsquo;ve corresponded for over two decades &mdash; coined a word for it: <strong>xenosialitis.</strong></p>
+
+  <div class="callout">
+    <span class="tag est">Established science</span>
+    <p>That humans lost CMAH and cannot synthesise Neu5Gc; that dietary Neu5Gc from red meat and dairy is incorporated into human tissues; that all humans carry anti-Neu5Gc antibodies; and that the resulting &ldquo;xenosialitis&rdquo; produces chronic inflammation &mdash; all of this is peer-reviewed, replicated science. In human-like mice engineered to share our Neu5Gc deficiency, this same antibody interaction has been shown to promote conditions such as atherosclerosis and to accelerate certain cancers. References are listed at the foot of this article.</p>
+  </div>
+
+  <h2>Why this matters beyond the laboratory</h2>
+
+  <p>Chronic low-grade inflammation is not a dramatic, obvious thing. It doesn&rsquo;t announce itself the way a broken bone or a fever does. It is the slow background hum increasingly implicated across a long list of modern conditions &mdash; cardiovascular disease, certain cancers, metabolic disease. Neu5Gc is one identified, dietary, <em>modifiable</em> contributor to that hum. You choose, three times a day, how much of it you take in.</p>
+
+  <p>That last point is what caught my attention as a nurse, and never let go. Most of the inflammatory drivers we talk about in medicine are things you can&rsquo;t easily change &mdash; your genes, your age, your history. This one you can put down or pick up at the grocery store.</p>
+
+  <h2>Where the established science ends &mdash; and where I come in</h2>
+
+  <p>Everything above is mainstream, published biology. I want to be scrupulous about the line I&rsquo;m about to cross, because keeping it clear is a matter of principle for me.</p>
+
+  <p>In 2003, following a modified Atkins diet, I watched a chronic skin condition I&rsquo;d had for years simply resolve. Careful re-testing on myself confirmed a reproducible pattern: red meat and dairy reliably brought it back within hours; removing them cleared it again. Years later I watched Dr. Ajit Varki describe the universal human immune response to Neu5Gc on a CBS broadcast, and a private observation suddenly had a plausible mechanism behind it.</p>
+
+  <div class="callout hypo">
+    <span class="tag hyp">My hypothesis &mdash; not established fact</span>
+    <p>The <strong>Sialic-Glycan Inflammatory Cascade (SGIC)</strong>, or Hamer Loop, is my proposal that this same xenosialitis mechanism &mdash; often working together with a second signal from wheat proteins called ATIs and gliadins &mdash; is an under-recognised driver of chronic inflammatory conditions dermatology and general medicine have struggled with, including acne and rosacea.</p>
+    <p>This is a hypothesis under active investigation. It is built on established Neu5Gc science, decades of clinical observation, and a reproducible personal record &mdash; but it has not been proven in controlled trials, and I am an independent researcher, not a dermatologist or immunologist. I hold it as a serious, testable idea, not a settled conclusion. That distinction runs through everything I publish.</p>
+  </div>
+
+  <p>The rest of this library is my attempt to lay that case out honestly: what the science firmly supports, what I&rsquo;m proposing on top of it, and how you could test any of it for yourself. If you want the mechanism in full, the <a href="index.html#research">white paper corpus</a> is the place to go. If you&rsquo;d rather start with something practical, the free <a href="https://acnerase.ca">Acnerase</a> app scans food labels for hidden Neu5Gc sources.</p>
+
+  <div class="disclaimer">
+    <span class="lbl">Please read this</span>
+    <p>This article is educational and reflects one independent researcher&rsquo;s reading of the science and his own experience. It is not medical advice, a diagnosis, or a treatment recommendation, and it is not a claim that any food causes or cures any disease. Diet changes can interact with medications and health conditions &mdash; talk with your own physician or a registered dietitian before making them.</p>
+  </div>
+
+  <div class="refs">
+    <h2>Sources &amp; further reading</h2>
+    <p class="note">The claims labelled &ldquo;established science&rdquo; above draw on the peer-reviewed literature, including:</p>
+    <ol>
+      <li>Samraj AN, Pearce OMT, Varki A, et al. A red meat-derived glycan promotes inflammation and cancer progression. <em>PNAS</em>. Foundational work on dietary Neu5Gc, xeno-autoantibodies, and xenosialitis.</li>
+      <li>Okerblom J, Varki A. Loss of CMAH during human evolution. <em>Genome Biology and Evolution</em>. On the CMAH deletion and its consequences.</li>
+      <li>Alisson-Silva F, et al. Human risk of diseases associated with red meat intake: analysis of the role of Neu5Gc. Review of the dietary-incorporation and antibody evidence.</li>
+      <li>Reviews on Neu5Gc in human cancer and atherosclerosis from the Varki laboratory, UC San Diego, available via PubMed / PMC.</li>
+    </ol>
+    <p class="note">Full citations and DOIs appear in the SGIC white papers. This reference list is revised as the literature grows.</p>
+  </div>
+
+  <div class="next">
+    <span class="lbl">Keep reading</span>
+    <div class="next-grid">
+      <a class="next-card" href="index.html#research">
+        <span class="k">The framework</span>
+        <div class="t">The White Paper Corpus</div>
+        <p>The full SGIC argument, condition by condition &mdash; free to download.</p>
+      </a>
+      <a class="next-card" href="index.html#books">
+        <span class="k">Go deeper</span>
+        <div class="t">The Three Books</div>
+        <p>From skin, to the whole body, to the immune system itself.</p>
+      </a>
+    </div>
+  </div>
+
+</article>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fbrand">Hamer Glycan Systems</div>
+    <p>&copy; 2026 Martin Hamer. Independent research. Veteran, Alberta, Canada.</p>
+    <p>Educational content only. Nothing here is medical advice, diagnosis, or a treatment recommendation.</p>
+    <div class="flinks">
+      <a href="blog.html">The Library</a>
+      <a href="index.html">Home</a>
+      <a href="https://acnerase.ca">Acnerase</a>
+      <a href="https://registry.hamerglycans.com">Registry</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

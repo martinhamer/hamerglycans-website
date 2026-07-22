@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The SGIC Library — Hamer Glycans</title>
+<meta name="description" content="A growing, plain-language reference library on dietary Neu5Gc, wheat ATIs, and the Sialic-Glycan Inflammatory Cascade — written for patients, clinicians, and the curious.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:      #14161a;
+    --charcoal-2:    #1c1f25;
+    --charcoal-3:    #262a32;
+    --gold:          #c9a24b;
+    --gold-bright:   #e8c874;
+    --coral:         #d1583f;
+    --coral-soft:    #e79c86;
+    --line:          rgba(201,162,75,0.16);
+    --text-dim:      rgba(232,200,116,0.78);
+    --text-faint:    rgba(232,200,116,0.52);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--charcoal);
+    color:var(--gold-bright);
+    font-family:'Source Serif 4', serif;
+    font-size:1.1rem;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+  }
+  h1,h2,h3,.display{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    line-height:1.08;
+    margin:0;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  a{ color:inherit; }
+  img{ max-width:100%; }
+  .wrap{ max-width:940px; margin:0 auto; padding:0 24px; }
+
+  /* NAV */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(20,22,26,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:940px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .brand img{ height:30px; width:auto; display:block; }
+  .brand span{
+    font-family:'Barlow Condensed', sans-serif; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.04em; font-size:1.05rem; color:var(--gold-bright);
+  }
+  .nav-links{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+  .nav-links a{
+    font-family:'IBM Plex Mono', monospace; font-size:0.74rem;
+    letter-spacing:0.1em; text-transform:uppercase; text-decoration:none;
+    color:var(--text-dim); transition:color .18s ease;
+  }
+  .nav-links a:hover{ color:var(--gold-bright); }
+  .nav-links a.current{ color:var(--gold-bright); border-bottom:1px solid var(--gold); padding-bottom:2px; }
+  @media (max-width:720px){ .nav-links{ gap:14px; } .brand span{ display:none; } }
+
+  /* HERO */
+  .hero{ padding:76px 0 48px; border-bottom:1px solid var(--line); }
+  .hero h1{ font-size:clamp(2.6rem,6vw,4.2rem); margin:14px 0 0; color:var(--gold-bright); }
+  .hero .lede{ font-size:1.22rem; color:var(--text-dim); max-width:660px; margin:22px 0 0; }
+  .hero .note{
+    font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--text-faint);
+    letter-spacing:0.04em; margin-top:26px; max-width:640px; line-height:1.7;
+  }
+
+  /* SECTION LABEL */
+  .sec{ padding:52px 0; }
+  .sec-label{ display:flex; align-items:baseline; gap:14px; margin-bottom:30px; }
+  .sec-label h2{ font-size:1.5rem; color:var(--gold-bright); }
+  .sec-label .rule{ flex:1; height:1px; background:var(--line); }
+
+  /* ARTICLE CARD */
+  .card{
+    display:block; text-decoration:none;
+    background:var(--charcoal-2);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:32px 34px;
+    transition:border-color .2s ease, transform .2s ease, background .2s ease;
+  }
+  .card:hover{ border-color:var(--gold); transform:translateY(-2px); background:var(--charcoal-3); }
+  .card .kicker{
+    font-family:'IBM Plex Mono', monospace; font-size:0.7rem; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--gold); display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+  }
+  .card .kicker .dot{ color:var(--text-faint); }
+  .card h3{ font-size:2rem; margin:16px 0 0; color:var(--gold-bright); }
+  .card p{ color:var(--text-dim); margin:14px 0 0; font-size:1.08rem; max-width:640px; }
+  .card .more{
+    display:inline-block; margin-top:20px; font-family:'Barlow Condensed',sans-serif;
+    font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--coral-soft); font-size:1.05rem;
+  }
+
+  /* UPCOMING LIST */
+  .upcoming{ display:grid; gap:2px; border-top:1px solid var(--line); }
+  .upcoming .row{
+    display:flex; align-items:baseline; gap:18px; padding:18px 4px;
+    border-bottom:1px solid var(--line);
+  }
+  .upcoming .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:0.66rem; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--gold); white-space:nowrap; min-width:118px;
+  }
+  .upcoming .ttl{ color:var(--text-dim); font-size:1.08rem; }
+  .upcoming-note{ font-family:'IBM Plex Mono', monospace; font-size:0.76rem; color:var(--text-faint); margin-top:18px; letter-spacing:0.04em; }
+
+  /* FOOTER */
+  .foot{ border-top:1px solid var(--line); padding:44px 0 60px; margin-top:24px; }
+  .foot .fbrand{ font-family:'Barlow Condensed',sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:var(--gold-bright); font-size:1.2rem; }
+  .foot p{ color:var(--text-faint); font-size:0.92rem; margin:10px 0 0; }
+  .foot .flinks{ margin-top:20px; display:flex; gap:22px; flex-wrap:wrap; }
+  .foot .flinks a{ font-family:'IBM Plex Mono',monospace; font-size:0.74rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; }
+  .foot .flinks a:hover{ color:var(--gold-bright); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="https://hamerglycans.com/hamer-glycans-logo.jpg" alt="Hamer Glycans logo">
+      <span>Hamer Glycans</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#books">Books</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#app">Acnerase</a>
+      <a href="index.html#research">Research</a>
+      <a href="blog.html" class="current">Library</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://registry.hamerglycans.com">Registry</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">The SGIC Library</p>
+    <h1>Plain-language articles on the food your immune system won&rsquo;t forgive</h1>
+    <p class="lede">A growing reference library on dietary xenoantigens &mdash; Neu5Gc, wheat ATIs, and the Sialic-Glycan Inflammatory Cascade &mdash; written for patients, clinicians, and anyone trying to make sense of chronic inflammation.</p>
+    <p class="note">This is a reference collection, not a news feed. Articles are written to stay useful for years and are revised as the science moves. Each one separates established, peer-reviewed science from the SGIC hypothesis, and none of it is medical advice.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="sec">
+    <div class="sec-label">
+      <h2>Foundations</h2>
+      <span class="rule"></span>
+    </div>
+    <a class="card" href="what-is-neu5gc.html">
+      <span class="kicker">
+        <span>Foundational</span><span class="dot">&bull;</span><span>~10 min read</span><span class="dot">&bull;</span><span>Reviewed Jul 2026</span>
+      </span>
+      <h3>What Is Neu5Gc?</h3>
+      <p>A three-million-year-old genetic accident left humans unable to make a sugar molecule that nearly every other mammal still carries &mdash; yet we eat it every day in red meat and dairy. Here is the established science on what happens next, and where my own hypothesis picks up.</p>
+      <span class="more">Read the article &rarr;</span>
+    </a>
+  </section>
+
+  <section class="sec">
+    <div class="sec-label">
+      <h2>Coming to the Library</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="upcoming">
+      <div class="row"><span class="tag">Practical guide</span><span class="ttl">How to read a food label for hidden Neu5Gc</span></div>
+      <div class="row"><span class="tag">Practical guide</span><span class="ttl">The hidden names: casein, whey, gelatin, bovine collagen and more</span></div>
+      <div class="row"><span class="tag">The framework</span><span class="ttl">What the Sialic-Glycan Inflammatory Cascade actually proposes</span></div>
+      <div class="row"><span class="tag">The framework</span><span class="ttl">Wheat, ATIs and gliadin: the second signal</span></div>
+      <div class="row"><span class="tag">Personal</span><span class="ttl">2003: how a diet, a mirror, and a CBS broadcast started 23 years of work</span></div>
+    </div>
+    <p class="upcoming-note">Titles in progress. Each becomes a permanent entry once written &mdash; the library grows slowly and on purpose.</p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fbrand">Hamer Glycan Systems</div>
+    <p>&copy; 2026 Martin Hamer. Independent research. Veteran, Alberta, Canada.</p>
+    <p>Educational content only. Nothing in this library is medical advice, diagnosis, or a treatment recommendation. Talk to your own clinician before changing your diet or care.</p>
+    <div class="flinks">
+      <a href="index.html">Home</a>
+      <a href="index.html#books">Books</a>
+      <a href="index.html#research">White Papers</a>
+      <a href="https://acnerase.ca">Acnerase</a>
+      <a href="https://registry.hamerglycans.com">Registry</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
