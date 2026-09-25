@@ -285,9 +285,10 @@
   /* ─── BOOKS ─── */
   .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
+  @media (max-width: 720px) { .books-grid { grid-template-columns: 1fr; } }
   .book-card {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -570,7 +571,7 @@
     footer { flex-direction: column; align-items: flex-start; }
   }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Hamer Glycan Systems","url":"https://hamerglycans.com","logo":"https://hamerglycans.com/hamer-glycans-logo.jpg","founder":{"@type":"Person","name":"Martin Hamer"}},{"@type":"Person","name":"Martin Hamer","jobTitle":"Retired Registered Nurse","description":"Independent researcher into dietary xenoantigens and chronic inflammation, with 45 years of clinical nursing experience at institutions including the Texas Heart Institute and Vancouver General Hospital.","url":"https://hamerglycans.com","sameAs":["https://www.amazon.com/dp/B0H5S9VVGD","https://www.amazon.com/dp/B0H5SF5YCG","https://www.amazon.com/dp/B0H797XFMN"]}]}</script></head>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Hamer Glycan Systems","url":"https://hamerglycans.com","logo":"https://hamerglycans.com/hamer-glycans-logo.jpg","founder":{"@type":"Person","name":"Martin Hamer"}},{"@type":"Person","name":"Martin Hamer","jobTitle":"Retired Registered Nurse","description":"Independent researcher into dietary xenoantigens and chronic inflammation, with 45 years of clinical nursing experience at institutions including the Texas Heart Institute and Vancouver General Hospital.","url":"https://hamerglycans.com","sameAs":["https://www.amazon.com/dp/B0H5S9VVGD","https://www.amazon.com/dp/B0H5SF5YCG","https://www.amazon.com/dp/B0H797XFMN","https://www.amazon.com/dp/B0HKNYPDKK"]}]}</script></head>
 <body>
 <!-- NAV -->
 <nav>
@@ -598,7 +599,7 @@
     What if your food is <em>teaching your immune system</em> to attack you?
   </h1>
   <p class="hero-sub">
-    Twenty-three years of clinical observation and self-experimentation, decoded into three books, a food-scanning app, and a growing body of white papers connecting dietary Neu5Gc to acne, rosacea, and systemic inflammatory disease.
+    Twenty-three years of clinical observation and self-experimentation, decoded into four books, a food-scanning app, and a growing body of white papers connecting dietary Neu5Gc to acne, rosacea, and systemic inflammatory disease.
   </p>
   <a href="https://acnerase.ca" target="_blank" rel="noopener" class="cross-link">
     Prefer the plain-language version? <strong>Visit acnerase.ca</strong> <span class="arrow">→</span>
@@ -617,7 +618,7 @@
 <div id="books" class="band">
   <div class="section">
     <span class="section-label">Books</span>
-    <h2 class="section-title">Three books. One unified framework.</h2>
+    <h2 class="section-title">Four books. One unified framework.</h2>
     <p class="section-intro">
       Each volume is standalone — start with whichever condition concerns you most. Together they form the complete Sialic-Glycan Inflammatory Cascade (SGIC) argument.
     </p>
@@ -664,6 +665,21 @@
     </p>
     <div class="book-footer">
       <a href="https://www.amazon.com/dp/B0H797XFMN" target="_blank" rel="noopener" class="btn-primary">Buy on Amazon →</a>
+    </div>
+  </div>
+</div>
+<!-- BOOK 4 -->
+<div class="book-card">
+  <div class="book-spine"></div>
+  <div class="book-body">
+    <p class="book-vol">Volume IV · Available Now</p>
+    <h3 class="book-title">Matches on Your Plate</h3>
+    <p class="book-sub">How Red Meat, Dairy, and Wheat Keep Inflammation Smouldering</p>
+    <p class="book-desc">
+      The first three volumes built the case. This one takes it to the dinner table. Matches on Your Plate follows the framework meal by meal: how everyday foods keep relighting the same inflammation, how to read a flare by its timing and character, and how negative controls separate real triggers from coincidence. Observations come first and the evidence follows, with every claim marked by how firmly it is established.
+    </p>
+    <div class="book-footer">
+      <a href="https://www.amazon.com/dp/B0HKNYPDKK" target="_blank" rel="noopener" class="btn-primary">Buy on Amazon →</a>
     </div>
   </div>
 </div>
@@ -794,7 +810,7 @@
     <span class="section-label">Further Reading · White Papers</span>
     <h2 class="section-title">The manuscript corpus</h2>
     <p class="section-intro">
-      Twenty two documents comprising the Hamer Loop Manuscript Series and seventeen condition-specific white papers. All are companion reading for both books and are available as free downloads below.
+      Twenty-five documents: the seven-part Hamer Loop Manuscript Series, seventeen condition-specific white papers, and the Neu5Gc Severity Index. All are companion reading for the books and are free to download below.
     </p>
     <a href="https://acnerase.ca" target="_blank" rel="noopener" class="cross-link" style="margin-top:-2rem; margin-bottom:3rem;">
       Looking for something more digestible first? <strong>Visit acnerase.ca</strong> <span class="arrow">→</span>
